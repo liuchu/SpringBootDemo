@@ -18,7 +18,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    UserRepository userRepository;
+    //UserRepository userRepository;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -28,7 +28,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     @Override
                     public UserDetails loadUserByUsername(String username)
                             throws UsernameNotFoundException {
-                        return userRepository.findUserName(username);
+                        //return userRepository.findUserName(username);
+                        return null;
                     }
                 });
     }
